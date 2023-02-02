@@ -1,0 +1,11 @@
+<% if user_signed_in?%>
+<p>こんにちわ, <%= link_to current_user.email  , user_show_path %> </p>
+<%= link_to "Log Out", destroy_user_session_path, method: :delete%>
+<%else%>
+      <%= link_to "ホーム", root_path%>
+      <%= link_to "サインイン", new_user_session_path %>
+      <%= link_to "ユーザ登録", new_user_registration_path %>
+<%end%>
+<h1>HomePage</h1>
+
+<%= link_to "本一覧を見る", books_path %>
